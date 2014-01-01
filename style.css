@@ -1,0 +1,82 @@
+body {
+    line-height: 1;
+}
+
+h1 {
+
+}
+
+#gamefield td, #gamefield button {
+	width: 100px;
+	height: 100px;
+    word-wrap: break-word;
+}
+
+.after {
+    background-color: dimgrey;
+}
+
+button img {
+    width: 80px;
+    height: 80px;
+}
+
+.level-info {
+    font-size: 20px;
+}
+
+.content {
+    width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.progress_width{
+    width: 602px;
+    height: 12px;
+    border: 1px solid #000;
+    color: #fff;
+    margin: 5px 0;
+}
+#progressBar{
+    width: 600px;
+    height: 10px;
+    background-color: #f00;
+    max-width: 600px;
+}
+
+.time {
+    width: 800px;
+    margin-left: 2px;
+}
+
+#gametable {
+    float: left;
+    width:  400px;
+}
+
+#gamebar {
+    margin-left: 400px;
+    padding: 20px;
+}
+
+#score-wrapper {
+    font-size: 20px;
+}
+
+.message {
+    width: 200px;
+    height: 50px;
+    font-size: 22px;
+}
+
+.help {
+    border: solid medium green;
+}
