@@ -380,12 +380,14 @@ function newGame()
     progressWidht = progressBar.width('100%');
     $('#score').html(currentScore);
 
-    request.open('GET', 'stat/stat.php?method=min', false);
-    request.send(null);
-    if (request.readyState == 4) {
-        minScore = parseInt(request.responseText);
-    }
-    request.abort();
+    $.ajax({
+        url: 'stat/stat.php?method=min',
+        async: false,
+        success: function(response){
+            minScore = parseInt(response);
+        }
+    });
+
     //document.getElementById('mainMusic').volume = 0.1;
     prepareFields();
     progressStart();
@@ -467,12 +469,13 @@ function progressStart()
             //document.getElementById('mainMusic').pause();
             if (currentScore > minScore) {
                 url = 'stat/stat.php?method=set&level=' + (currentLevel+1) + '&score='+currentScore;
-                request.open('GET', url, false);
-                request.send(null);
-                if (request.readyState == 4) {
-                    alert('Поздравляем! Вы попали в таблицу результатов. Чтобы посмотреть ее, нажмите на соответствующей кнопке');
-                }
-                request.abort();
+                $.ajax({
+                    url: url,
+                    async: false,
+                    success: function (response) {
+                        alert('Поздравляем! Вы попали в таблицу результатов. Чтобы посмотреть ее, нажмите на соответствующей кнопке');
+                    }
+                });
             }
             if(confirm('Игра окончена. Сыграть еще?')) {
                 newGame();
@@ -512,7 +515,7 @@ function createRequestObject() {
 
 function getScoreTable()
 {
-    url = 'http://flags.ruspanzer.ru/stat/stat.php?method=all';
+    url = 'stat/stat.php?method=all';
     window.open(url, 'Таблица рекордов', 'height=350,width=450,toolbar=no,directories=no,status=no, continued from previous linemenubar=no,scrollbars=no,resizable=no ,modal=yes');
     //window.showModalDialog(url);
 }

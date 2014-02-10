@@ -112,13 +112,13 @@ if (!isset($_SESSION['username'])) {
     
     <div style="display: none;">
         <audio id="errorMusic">
-            <source src="sounds/error.mp3">
+            <source src="../sounds/error.mp3">
         </audio>
 <!--        <audio id="gameOverMusic">
             <source src="sounds/gameover.mp3">
         </audio>-->
         <audio id="presentsMusic">
-            <source src="sounds/success.mp3">
+            <source src="../sounds/success.mp3">
         </audio>
 <!--		<audio id="mainMusic" loop>
 			<source src="sounds/main.mp3">
