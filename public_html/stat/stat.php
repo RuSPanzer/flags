@@ -35,6 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
                 $i = 0;
                 print_r('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
+                print_r('<title>Таблица рекордов</title>');
+                print_r('<h4>Таблица рекордов</h4>');
                 print_r('<table border="1">
                     <tr>
                         <td>Позиция</td>
