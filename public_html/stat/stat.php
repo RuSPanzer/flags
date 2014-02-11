@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         switch ($method) {
             case 'all' :
             {
-                $sql = 'SELECT * FROM user_stat' . ';';
+                $sql = 'SELECT * FROM user_stat ORDER BY score DESC' . ';';
 
                 $selectedRow = 0;
 
